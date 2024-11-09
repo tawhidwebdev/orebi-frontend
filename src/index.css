@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+  /*Font Family Import*/
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  /* Common Code Start */
+  *{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  a{
+    display: inline-block;
+    text-decoration: none;
+  }
+  ol,ul{
+    list-style-type: none;
+  }
+  /* Common Code End */
+}
+
+
+:root{
+  /* color Code Remaim */
+  --red_color: #DB4444;
+  --black_color: #000000;
+  --white_color: #ffffff;
+  --gray_white_color: #F5F5F5;
+  --creamy_white_color: #FEFAF1;
+  --text_white_gray: #FAFAFA;
+  --text_black_color: #000000;
+  --text_black_gray: #7D8184;
+  --button_black_color: #000000;
+  --button_green_color: #00FF66;
+  --button_red_color: #DB4444;
+  --hover_pink_color: #E07575;
+  --hover_blue_color: #A0BCE0;
+
+  /* Font Family */
+  --font-family: "Inter", sans-serif;
+  --font-family: "Poppins", sans-serif;
+}
