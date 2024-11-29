@@ -41,6 +41,6 @@
   --hover_blue_color: #A0BCE0;
 
   /* Font Family */
-  --font-family: "Inter", sans-serif;
-  --font-family: "Poppins", sans-serif;
+  --inter: "Inter", sans-serif;
+  --poppins: "Poppins", sans-serif;
 }
