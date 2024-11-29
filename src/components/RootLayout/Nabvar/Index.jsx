@@ -2,9 +2,17 @@ import React from 'react'
 
 const Nabvar = () => {
   return (
-    <div>
-      Navbar Section
-    </div>
+    <section>
+      <div className="container">
+        <div>
+        <div>
+          <h1>Exclusive</h1>
+        </div>
+        <div></div>
+        <div></div>
+        </div>
+      </div>
+    </section>
   )
 }
 
