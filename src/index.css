@@ -84,11 +84,15 @@
     position: absolute;
     width: 16px;
     height: 16px;
+    line-height: 16px;
     background-color: var(--red_color);
-    content: "";
-    top: 0;
-    right: 0;
+    content: "0";
+    top: -6px;
+    right: -6px;
     border-radius: 100%;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
   }
   /* Navbar Code End */
 }
