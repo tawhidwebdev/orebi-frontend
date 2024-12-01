@@ -77,5 +77,18 @@
   .menuUnderLine:hover::after{
     transform: scale(1);
   }
+  .addCardItem{
+    position: relative;
+  }
+  .addCardItem::after{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--red_color);
+    content: "";
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+  }
   /* Navbar Code End */
 }
