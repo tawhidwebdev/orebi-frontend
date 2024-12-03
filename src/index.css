@@ -25,7 +25,7 @@
 
 
 :root{
-  /* color Code Remaim */
+  /* Color Code Remaim */
   --red_color: #DB4444;
   --black_color: #000000;
   --white_color: #ffffff;
@@ -39,6 +39,9 @@
   --button_red_color: #DB4444;
   --hover_pink_color: #E07575;
   --hover_blue_color: #A0BCE0;
+
+  /* RGB Color */
+  --rgb_black_color: rgba(0, 0, 0, 0.4);
 
   /* Font Family */
   --inter: "Inter", sans-serif;
@@ -95,4 +98,8 @@
     text-align: center;
   }
   /* Navbar Code End */
+}
+
+h1{
+  Color:(red: 0, green: 0, blue: 0, alpha: 0.04)
 }

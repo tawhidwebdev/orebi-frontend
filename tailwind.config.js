@@ -19,7 +19,9 @@ export default {
         button_green_color:"var(--button_green_color)",
         button_red_color:"var(--button_red_color)",
         hover_pink_color:"var(--hover_pink_color)",
-        hover_blue_color:"var(--hover_blue_color)"
+        hover_blue_color:"var(--hover_blue_color)",
+
+        rgb_black_color:"var(--rgb_black_color)",
       },
     },
     fontFamily: {

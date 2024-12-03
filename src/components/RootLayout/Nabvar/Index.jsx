@@ -66,9 +66,33 @@ const Nabvar = () => {
               <span className='cursor-pointer text-2xl text-black_color addCardItem'>
                 <GrCart />
               </span>
-              <span className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
-                <LuUser />
-              </span>
+              <div className='relative'>
+                <span className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
+                  <LuUser />
+                </span>
+                <div className='w-[224px] bg-rgb_black_color absolute top-9 right-0 rounded pt-[18px] pr-3 pb-[10px] pl-5 flex flex-col flex-wrap gap-y-4'>
+                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                    <span><LuUser /></span>
+                    <h5>Manage My Account</h5>
+                  </div>
+                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                    <span><LuUser /></span>
+                    <h5>Manage My Account</h5>
+                  </div>
+                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                    <span><LuUser /></span>
+                    <h5>Manage My Account</h5>
+                  </div>
+                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                    <span><LuUser /></span>
+                    <h5>Manage My Account</h5>
+                  </div>
+                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                    <span><LuUser /></span>
+                    <h5>Manage My Account</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
