@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from "react-router";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from 'react-icons/fa6';
 import { GrCart } from 'react-icons/gr';
 import { LuUser } from "react-icons/lu";
+import { MdOutlineCancel, MdOutlineLocalMall } from 'react-icons/md';
+import { IoIosStarOutline } from 'react-icons/io';
+import { BiLogOut } from 'react-icons/bi';
 
 
 const Nabvar = () => {
@@ -24,7 +27,12 @@ const Nabvar = () => {
       id: 4,
       item: "sing up"
     },
-  ]
+  ];
+
+  const [account, setAccount] = useState(false);
+  const handleAccount = ()=> {
+    setAccount(!account)
+  }
 
   return (
     <section className='pt-10 pb-4 border-b-[0.5px] border-b-black border-opacity-30 '>
@@ -40,7 +48,7 @@ const Nabvar = () => {
                   <NavLink
                     to={`/${nav.item}`}
                     className={({ isActive, isPending }) =>
-                      isPending ? "textOne" : isActive ? "text-green-600 textOne" : "textOne"
+                      isPending ? "textOne16px" : isActive ? "text-green-600 textOne16px" : "textOne16px"
                     }
                   >
                     {nav.item}
@@ -67,31 +75,33 @@ const Nabvar = () => {
                 <GrCart />
               </span>
               <div className='relative'>
-                <span className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
+                <span onClick={handleAccount} className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
                   <LuUser />
                 </span>
-                <div className='w-[224px] bg-rgb_black_color absolute top-9 right-0 rounded pt-[18px] pr-3 pb-[10px] pl-5 flex flex-col flex-wrap gap-y-4'>
-                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                    <span><LuUser /></span>
-                    <h5>Manage My Account</h5>
+                {account && (
+                  <div className='w-[224px] bg-rgb_black_color absolute top-9 right-0 rounded pt-[18px] pr-3 pb-[10px]  pl-5 flex flex-col flex-wrap gap-y-4'>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                      <span className='text-xl cursor-pointer'><LuUser /></span>
+                      <h5 className='textTwo14px capitalize'>Manage My Account</h5>
+                    </div>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                      <span className='text-xl cursor-pointer'><MdOutlineLocalMall /></span>
+                      <h5 className='textTwo14px capitalize'>My Order</h5>
+                    </div>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                      <span className='text-xl cursor-pointer'><MdOutlineCancel /></span>
+                      <h5 className='textTwo14px capitalize'>My Cancellations</h5>
+                    </div>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                      <span className='text-xl cursor-pointer'><IoIosStarOutline /></span>
+                      <h5 className='textTwo14px capitalize'>My Reviews</h5>
+                    </div>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
+                      <span className='text-xl cursor-pointer'><BiLogOut /></span>
+                      <h5 className='textTwo14px capitalize'>Logout</h5>
+                    </div>
                   </div>
-                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                    <span><LuUser /></span>
-                    <h5>Manage My Account</h5>
-                  </div>
-                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                    <span><LuUser /></span>
-                    <h5>Manage My Account</h5>
-                  </div>
-                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                    <span><LuUser /></span>
-                    <h5>Manage My Account</h5>
-                  </div>
-                  <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                    <span><LuUser /></span>
-                    <h5>Manage My Account</h5>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
