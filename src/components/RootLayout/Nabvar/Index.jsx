@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from "react-router";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from 'react-icons/fa6';
@@ -7,6 +7,7 @@ import { LuUser } from "react-icons/lu";
 import { MdOutlineCancel, MdOutlineLocalMall } from 'react-icons/md';
 import { IoIosStarOutline } from 'react-icons/io';
 import { BiLogOut } from 'react-icons/bi';
+import { PiLogThin } from 'react-icons/pi';
 
 
 const Nabvar = () => {
@@ -30,9 +31,19 @@ const Nabvar = () => {
   ];
 
   const [account, setAccount] = useState(false);
-  const handleAccount = ()=> {
-    setAccount(!account)
-  }
+  // const handleAccount = ()=>{
+  //   setAccount(!account)
+  // }
+   const userAccountRef = useRef(null)
+   useEffect(()=>{
+    window.addEventListener("click", (event)=>{
+      if (userAccountRef.current.contains(event.target)) {
+        setAccount(!account)
+      }else{
+        setAccount(false)
+      }
+    })
+   }, [account])
 
   return (
     <section className='pt-10 pb-4 border-b-[0.5px] border-b-black border-opacity-30 '>
@@ -75,29 +86,31 @@ const Nabvar = () => {
                 <GrCart />
               </span>
               <div className='relative'>
-                <span onClick={handleAccount} className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
+                <span
+                 ref={userAccountRef}
+                className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
                   <LuUser />
                 </span>
                 {account && (
                   <div className='w-[224px] bg-rgb_black_color absolute top-9 right-0 rounded pt-[18px] pr-3 pb-[10px]  pl-5 flex flex-col flex-wrap gap-y-4'>
-                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                      <span className='text-xl cursor-pointer'><LuUser /></span>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color cursor-pointer transition-all  duration-200 hover:duration-200 hover:bg-white_color hover:text-text_black_color hover:p-2 hover:rounded hover:transition-all hover:text-center'>
+                      <span className='text-xl'><LuUser /></span>
                       <h5 className='textTwo14px capitalize'>Manage My Account</h5>
                     </div>
-                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                      <span className='text-xl cursor-pointer'><MdOutlineLocalMall /></span>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color transition-all duration-200 cursor-pointer hover:duration-200 hover:bg-white_color hover:text-text_black_color hover:p-2 hover:rounded hover:transition-all hover:text-center'>
+                      <span className='text-xl'><MdOutlineLocalMall /></span>
                       <h5 className='textTwo14px capitalize'>My Order</h5>
                     </div>
-                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                      <span className='text-xl cursor-pointer'><MdOutlineCancel /></span>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color transition-all duration-0 cursor-pointer hover:duration-200 hover:bg-white_color hover:text-text_black_color hover:p-2 hover:rounded hover:transition-all hover:text-center'>
+                      <span className='text-xl'><MdOutlineCancel /></span>
                       <h5 className='textTwo14px capitalize'>My Cancellations</h5>
                     </div>
-                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                      <span className='text-xl cursor-pointer'><IoIosStarOutline /></span>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color transition-all duration-0 cursor-pointer hover:duration-200 hover:bg-white_color hover:text-text_black_color hover:p-2 hover:rounded hover:transition-all hover:text-center'>
+                      <span className='text-xl'><IoIosStarOutline /></span>
                       <h5 className='textTwo14px capitalize'>My Reviews</h5>
                     </div>
-                    <div className='flex items-center justify-start gap-x-4 text-white_color'>
-                      <span className='text-xl cursor-pointer'><BiLogOut /></span>
+                    <div className='flex items-center justify-start gap-x-4 text-white_color transition-all duration-0 cursor-pointer hover:duration-200 hover:bg-white_color hover:text-text_black_color hover:p-2 hover:rounded hover:text-center'>
+                      <span className='text-xl'><BiLogOut /></span>
                       <h5 className='textTwo14px capitalize'>Logout</h5>
                     </div>
                   </div>
