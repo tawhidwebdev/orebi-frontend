@@ -31,19 +31,19 @@ const Nabvar = () => {
   ];
 
   const [account, setAccount] = useState(false);
-  // const handleAccount = ()=>{
-  //   setAccount(!account)
-  // }
-   const userAccountRef = useRef(null)
-   useEffect(()=>{
-    window.addEventListener("click", (event)=>{
-      if (userAccountRef.current.contains(event.target)) {
-        setAccount(!account)
-      }else{
-        setAccount(false)
-      }
-    })
-   }, [account])
+  const handleAccount = ()=>{
+    setAccount(!account)
+  }
+  //  const userAccountRef = useRef(null)
+  //  useEffect(()=>{
+  //   window.addEventListener("click", (event)=>{
+  //     if (userAccountRef.current.contains(event.target)) {
+  //       setAccount(!account)
+  //     }else{
+  //       setAccount(false)
+  //     }
+  //   })
+  //  }, [account])
 
   return (
     <section className='pt-10 pb-4 border-b-[0.5px] border-b-black border-opacity-30 '>
@@ -87,7 +87,8 @@ const Nabvar = () => {
               </span>
               <div className='relative'>
                 <span
-                 ref={userAccountRef}
+                onClick={handleAccount}
+                //  ref={userAccountRef}
                 className='cursor-pointer text-xl text-white bg-red_color w-8 h-8 rounded-full flex items-center justify-center '>
                   <LuUser />
                 </span>
