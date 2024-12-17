@@ -12,11 +12,11 @@ export const category =[
   {
     id: 3,
     category: "Electronics",
-    subCategory: true,
+    subCategory: false,
   },
   {
     id: 4,
-    category: "Home    & Lifestyle",
+    category: "Home & Lifestyle",
     subCategory: false,
   },
   {
@@ -27,21 +27,21 @@ export const category =[
   {
     id: 6,
     category: "Sports & Outdoor",
-    subCategory: true,
+    subCategory: false,
   },
   {
     id: 7,
     category: "Baby’s & Toys",
-    subCategory:true,
+    subCategory:false,
   },
   {
     id: 8,
     category: "Groceries & Pets",
-    subCategory: true,
+    subCategory: false,
   },
   {
     id: 9,
     category: "Health & Beauty",
-    subCategory: true,
+    subCategory: false,
   }
 ]
